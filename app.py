@@ -35,7 +35,7 @@ def pokedex():
   pokedex = {
     'firstPokemon':{
     'name': pokemon1['name'],
-    'id': pokemon2['pkdx_id'],
+    'id': pokemon1['pkdx_id'],
     'hp': pokemon1['hp'],
     'atk': pokemon1['sp_atk'],
     'def': pokemon1['sp_def'],
