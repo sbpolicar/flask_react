@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My App</title>
+	<title>Pokemon Battle</title>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-  <div id="container">
-  <div id="board"></div>
-  </div>
-  <script src="/js/main.js"></script>
+	<div id="page-wrapper">
+		<div id="header-block" class="page-block">
+			<div class="md-padding">
+				<h1>pokeFight.js</h1>
+				<h2>The most intense Pokemon flask, react, fighting app you have ever experienced!</h2>
+			</div>
+
+		</div>
+		<div class="page-block">
+			<div class="md-padding">
+				<p>Click the button to begin the carnage!</p>
+				<button id="fight-button" type="button" value="Fight!" >Fight!</button>
+			</div>
+		</div>
+	</div>
+	<div id="board"></div>
 </body>
+<script src="/js/main.js"></script>
 </html>

@@ -1,3 +1,49 @@
 body{
-  background: blue;
+	background-color: #FF9900; /*FF0000*/
+	font-family: 'Lato', sans-serif;
+}
+
+#page-wrapper{
+	border-radius:10px;
+	background-color: #ffffff;
+	max-width: 800px;
+	width: 100%;
+	margin: auto;
+}
+
+.page-block{
+	border-radius:10px;
+	width: 100%;
+	margin: 10px auto;
+}
+
+#header-block{
+	background-color: #FF0000;
+}
+
+.md-padding{
+	padding: 10px;
+}
+
+h1{
+	text-align: center;
+}
+
+h1, h2{
+	padding: 10px;
+}
+
+p{
+	font-family: 'Lato', sans-serif;
+	padding: 10px;
+}
+
+#fight-button{
+	border-radius:10px;
+	border-color: black;
+	border-style: solid;
+	border-width: 3px;
+	width: 100%;
+	font-size:72px;
+	padding: 10px;
 }

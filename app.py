@@ -1,5 +1,8 @@
 import json
-from flask import Flask
+import requests
+import random
+import math
+from flask import Flask, request, flash, url_for, redirect
 
 app = Flask(__name__)
 
@@ -11,14 +14,15 @@ def index():
 def static_path(path):
   return app.send_static_file(path)
 
-@app.route('/stuff')
-def stuff():
-  stuff = {
-    'artist1': 'Red Hot Chili Peppers',
-    'artist2': 'Vampire Weekend',
-    'artist3': 'Chicago'
-  }
+@app.route('/pokedex')
+def pokedex():
+  pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
+  pokemon1moves = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
 
-  return json.dumps(stuff)
+  pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
+  pokedex = json.dumps({'pokemon1':json.loads(pokemon1.text),'pokemon2':json.loads(pokemon2.text)})
+  return pokedex
 
 app.run(debug=True)
+
+
