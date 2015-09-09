@@ -20,7 +20,7 @@ module.exports = React.createClass({
         console.log(e)
       }
     });
-    ajax.open('GET','/pokedex');
+    ajax.open('GET','/api/pokedex');
     ajax.send();
   },
   componentWillMount:function(){
