@@ -19,7 +19,7 @@ module.exports= React.createClass({
 	render:function(){
 		return(
 				<div>
-					<div>{this.state.pokedex}</div>
+					<div><Playr /></div>
 				</div>
 			)
 	}
