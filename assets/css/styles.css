@@ -1,6 +1,7 @@
 body{
 	background-color: #FF9900; /*FF0000*/
 	font-family: 'Lato', sans-serif;
+	padding: 20px;
 }
 
 #page-wrapper{
@@ -9,12 +10,18 @@ body{
 	max-width: 800px;
 	width: 100%;
 	margin: auto;
+	overflow: auto;
 }
 
 .page-block{
 	border-radius:10px;
 	width: 100%;
-	margin: 10px auto;
+	margin: auto;
+}
+
+.page-split-column{
+	width: 50%;
+	float: left;
 }
 
 #header-block{
@@ -25,11 +32,17 @@ body{
 	padding: 10px;
 }
 
-h1{
+.ex-padding{
+	padding: 20px;
+}
+
+
+h1, h2{
+	padding: 10px;
 	text-align: center;
 }
 
-h1, h2{
+ul{
 	padding: 10px;
 }
 
@@ -46,4 +59,22 @@ p{
 	width: 100%;
 	font-size:72px;
 	padding: 10px;
+}
+
+.attack-button{
+	border-radius:10px;
+	border-color: black;
+	border-style: solid;
+	border-width: 3px;
+	width: 100%;
+	font-size:32px;
+	padding: 10px;
+}
+
+#leftPlayerBox{
+
+}
+
+.pokemon-image{
+	width: 100%;
 }
