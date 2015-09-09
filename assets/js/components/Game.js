@@ -8,7 +8,6 @@ module.exports= React.createClass({
 	render:function(){
 		return(
 				<div>
-					<div><Compr /></div>
 					<div><Playr /></div>
 				</div>
 			)
