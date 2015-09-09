@@ -17,6 +17,8 @@ def static_path(path):
 @app.route('/pokedex')
 def pokedex():
   pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
+  pokemon1moves = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
+
   pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
   pokedex = json.dumps({'pokemon1':json.loads(pokemon1.text),'pokemon2':json.loads(pokemon2.text)})
   return pokedex
