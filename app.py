@@ -17,8 +17,8 @@ def static_path(path):
 @app.route('/api/pokedex')
 def pokedex():
   # pokemon api call
-  pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
-  pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*100)))
+  pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
   pokemon1 = json.loads(pokemon1.text)
   pokemon2 = json.loads(pokemon2.text)
   # moves api call
@@ -35,8 +35,8 @@ def pokedex():
   pokedex = {
     'firstPokemon':{
     'name': pokemon1['name'],
-    'id': pokemon2['pkdx_id'],
-    'hp': pokemon1['hp'],
+    'id': pokemon1['pkdx_id'],
+    'hp': 100,
     'atk': pokemon1['sp_atk'],
     'def': pokemon1['sp_def'],
     'moves':{
@@ -52,7 +52,7 @@ def pokedex():
     'secondPokemon':{
     'name': pokemon2['name'],
     'id': pokemon2['pkdx_id'],
-    'hp': pokemon2['hp'],
+    'hp': 100,
     'atk': pokemon2['sp_atk'],
     'def': pokemon2['sp_def'],
     'moves':{

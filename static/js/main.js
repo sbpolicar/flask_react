@@ -43,7 +43,7 @@ var React = require('react');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState:function(){
     return{
-      pokeData:{}
+      pokeData:{firstPokemon:{moves:{}},secondPokemon:{moves:{}}}
     }
   },
 	pokedex:function(){
@@ -60,14 +60,47 @@ module.exports = React.createClass({displayName: "exports",
         console.log(e)
       }
     });
-    ajax.open('GET','/pokedex');
+    ajax.open('GET','/api/pokedex');
     ajax.send();
   },
   componentWillMount:function(){
     this.pokedex();
   },
 	render:function(){
-			return (React.createElement("div", null, this.state.pokeData))
+      var img1="00"+this.state.pokeData.firstPokemon.id
+      img1 = "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/"+img1.slice(img1.length-3)+".png";
+      var img2="00"+this.state.pokeData.secondPokemon.id;
+      img2 = "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/"+img2.slice(img2.length-3)+".png";
+      return (
+        React.createElement("div", null, 
+              React.createElement("div", {className: "pokeDiv1"}, 
+              React.createElement("div", {className: "nameAndPic1"}, 
+              React.createElement("h2", null, this.state.pokeData.firstPokemon.name), 
+              React.createElement("h4", null, "HP:", this.state.pokeData.firstPokemon.hp), 
+              React.createElement("img", {className: "pokemon-image", src: img1})
+              ), 
+              React.createElement("div", {className: "attackDiv"}, 
+              React.createElement("ul", null, 
+              React.createElement("li", null, this.state.pokeData.firstPokemon.moves.move1), 
+              React.createElement("li", null, this.state.pokeData.firstPokemon.moves.move2)
+              )
+              )
+              ), 
+              React.createElement("div", {className: "pokeDiv2"}, 
+              React.createElement("div", {className: "nameAndPic2"}, 
+              React.createElement("h2", null, this.state.pokeData.secondPokemon.name), 
+              React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
+              React.createElement("img", {className: "pokemon-image", src: img2})
+              ), 
+              React.createElement("div", {className: "attackDiv"}, 
+              React.createElement("ul", null, 
+              React.createElement("li", null, this.state.pokeData.secondPokemon.moves.move1), 
+              React.createElement("li", null, this.state.pokeData.secondPokemon.moves.move2)
+              )
+              )
+              )
+          )
+        )
 	}
 
 })
