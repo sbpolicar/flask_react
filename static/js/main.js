@@ -152,7 +152,7 @@ module.exports = React.createClass({displayName: "exports",
       });
       return (
         React.createElement("div", null, 
-              React.createElement("div", {className: "pokeDiv2"}, 
+              React.createElement("div", {className: "pokeDiv2"}, React.createElement("p", {className: "pull-right"}, "GARY OAK"), 
               React.createElement("div", {className: "nameAndPic2"}, 
               React.createElement("h2", {id: "compHlth"}, this.state.pokeData.secondPokemon.name), 
               React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
@@ -163,6 +163,7 @@ module.exports = React.createClass({displayName: "exports",
               )
               ), 
               React.createElement("div", {className: "pokeDiv1"}, 
+              React.createElement("p", null, "Player-One"), 
               React.createElement("div", {className: "nameAndPic1"}, 
               React.createElement("h2", {id: "plyrHlth"}, this.state.pokeData.firstPokemon.name), 
               React.createElement("h4", null, "HP:", this.state.pokeData.firstPokemon.hp), 

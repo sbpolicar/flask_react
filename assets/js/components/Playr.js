@@ -111,7 +111,7 @@ module.exports = React.createClass({
       });
       return (
         <div>
-              <div className="pokeDiv2">
+              <div className="pokeDiv2"><p className="pull-right">GARY OAK</p>
               <div className="nameAndPic2">
               <h2 id="compHlth">{this.state.pokeData.secondPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.secondPokemon.hp}</h4>
@@ -121,7 +121,12 @@ module.exports = React.createClass({
                  {moves2}
               </div>
               </div>
+              <audio>
+              <source src="Pokemon.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
               <div className="pokeDiv1">
+              <p>Player-One</p>
               <div className="nameAndPic1">
               <h2 id="plyrHlth">{this.state.pokeData.firstPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.firstPokemon.hp}</h4>
