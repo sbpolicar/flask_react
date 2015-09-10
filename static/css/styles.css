@@ -96,14 +96,14 @@ p{
 }
 .pokeDiv1{
 	float:left;
-	/*width:;*/
-	text-align:center;
+	width:60%;
 }
 .nameAndPic1{
 	float:left;
 }
 .pokeDiv2{
 	float:right;
+	width:60%;
 }
 .nameAndPic2{
 	float:right;

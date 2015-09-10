@@ -95,9 +95,24 @@ module.exports = React.createClass({displayName: "exports",
                 React.createElement("h5", {onClick: attack, key: idx}, move.name)
             )
       });
-
+      var moves2 = this.state.pokeData.secondPokemon.moves.map(function(move, idx){
+          var attack = self.plyrAttack.bind(self, move.power);
+          return (
+                React.createElement("h5", {key: idx}, move.name)
+            )
+      });
       return (
         React.createElement("div", null, 
+              React.createElement("div", {className: "pokeDiv2"}, 
+              React.createElement("div", {className: "nameAndPic2"}, 
+              React.createElement("h2", null, this.state.pokeData.secondPokemon.name), 
+              React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
+              React.createElement("img", {className: "pokemon-image", src: img2})
+              ), 
+              React.createElement("div", {className: "attackDiv"}, 
+                 moves2
+              )
+              ), 
               React.createElement("div", {className: "pokeDiv1"}, 
               React.createElement("div", {className: "nameAndPic1"}, 
               React.createElement("h2", null, this.state.pokeData.firstPokemon.name), 
@@ -107,17 +122,8 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("div", {className: "attackDiv"}, 
                   moves1
               )
-              ), 
-              React.createElement("div", {className: "pokeDiv2"}, 
-              React.createElement("div", {className: "nameAndPic2"}, 
-              React.createElement("h2", null, this.state.pokeData.secondPokemon.name), 
-              React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
-              React.createElement("img", {className: "pokemon-image", src: img2})
-              ), 
-              React.createElement("div", {className: "attackDiv"}
-                
               )
-              )
+              
           )
         )
 	}

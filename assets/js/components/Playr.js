@@ -55,9 +55,24 @@ module.exports = React.createClass({
                 <h5 onClick={attack} key={idx}>{move.name}</h5>
             )
       });
-
+      var moves2 = this.state.pokeData.secondPokemon.moves.map(function(move, idx){
+          var attack = self.plyrAttack.bind(self, move.power);
+          return (
+                <h5 key={idx}>{move.name}</h5>
+            )
+      });
       return (
         <div>
+              <div className="pokeDiv2">
+              <div className="nameAndPic2">
+              <h2>{this.state.pokeData.secondPokemon.name}</h2>
+              <h4>HP:{this.state.pokeData.secondPokemon.hp}</h4>
+              <img className="pokemon-image" src={img2} />
+              </div>
+              <div className="attackDiv">
+                 {moves2}
+              </div>
+              </div>
               <div className="pokeDiv1">
               <div className="nameAndPic1">
               <h2>{this.state.pokeData.firstPokemon.name}</h2>
@@ -68,16 +83,7 @@ module.exports = React.createClass({
                   {moves1}
               </div>
               </div>
-              <div className="pokeDiv2">
-              <div className="nameAndPic2">
-              <h2>{this.state.pokeData.secondPokemon.name}</h2>
-              <h4>HP:{this.state.pokeData.secondPokemon.hp}</h4>
-              <img className="pokemon-image" src={img2} />
-              </div>
-              <div className="attackDiv">
-                
-              </div>
-              </div>
+              
           </div>
         )
 	}
