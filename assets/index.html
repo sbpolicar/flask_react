@@ -2,22 +2,17 @@
 <html>
 <head>
 	<title>Pokemon Battle</title>
-	<link href='https://fonts.googleapis.com/css?fami=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="./js/script.js"></script>
-
+	<script src="/static/js/script.js"></script>
 
 </head>
 <body class="container-fluid">
-<audio autoplay>
-              <source src="Pokemon.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-              </audio>
-<div class="row gameboy text-center"><img src="http://vignette2.wikia.nocookie.net/nintendo/images/6/6a/Game_Boy_Logo.png/revision/latest?cb=20100830220346&path-prefix=en"><br><br><p class="dot-matrix black-text"><i class="blue">==============================</i><br>DOT MATRIX WITH STEREO SOUND<br><i class="red">==============================</i></p></div>
+<div class="row gameboy text-center"><img src="http://vignette2.wikia.nocookie.net/nintendo/images/6/6a/Game_Boy_Logo.png/revision/latest?cb=20100830220346&path-prefix=en"><br><br></div>
 	<div class="col-md-2 gameboy"><span class="black-text">Power</span>&nbsp;<span class="text-center gameboy-power">&nbsp;</span><br></div>
 	<div class="col-md-8 gameboy-screen">
 		<div class="">
@@ -26,23 +21,21 @@
 					<h1>pokeFight.js</h1>
 					<h2>The most intense Pokemon flask, react, fighting app you have ever experienced!</h2>
 				</div>
+
+			</div>
 			<div class="page-block">
-				<div class="text-center md-padding">
-					<img class="text-center gary col-sm-3" src="http://vignette3.wikia.nocookie.net/smashbroslawlorigins/images/b/bd/Gary_Oak.png/revision/latest?cb=20140701130214"><div class="well col-sm-6">Hi, I'm GARY OAK, I'm here to battle, not to talk. What about you?</div>
+				<div class="md-padding">
+					<p>Click the button to begin the carnage!</p>
 					<button id="fight-button" type="button" value="Fight!" >Fight!</button>
 				</div>
 			</div>
-			</div>
 				<div>
-					<div class="hide" id="board"></div>
+					<div id="board"></div>
 
 				</div>
 		</div>
 	</div>
 	<div class="col-md-2 gameboy "></div>
-
-<div id="winModal"></div>
-<div id="modalBlock"></div>
 
 </body>
 <script src="/js/main.js"></script>

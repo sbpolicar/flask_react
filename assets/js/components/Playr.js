@@ -111,8 +111,8 @@ module.exports = React.createClass({
       });
       return (
         <div>
-              <div className="pokeDiv2"><p className="pull-right">GARY OAK</p>
-              <div className="nameAndPic2">
+              <div className="pokeDiv2">
+              <div className="nameAndPic2"><p className="pull-right">GARY OAK</p>
               <h2 id="compHlth">{this.state.pokeData.secondPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.secondPokemon.hp}</h4>
               <img className="pokemon-image" src={img2} />
@@ -123,8 +123,8 @@ module.exports = React.createClass({
               </div>
 
               <div className="pokeDiv1">
-              <p>Player-One</p>
-              <div className="nameAndPic1">
+              
+              <div className="nameAndPic1"><p className="pull-left">Player-One</p>
               <h2 id="plyrHlth">{this.state.pokeData.firstPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.firstPokemon.hp}</h4>
               <img className="pokemon-image" src={img1} />

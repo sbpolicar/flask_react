@@ -10,7 +10,6 @@ module.exports = React.createClass({displayName: "exports",
     )
   }
 });
-
 },{"react":160}],2:[function(require,module,exports){
 var React = require('react');
 var Playr = require('./Playr');
@@ -152,8 +151,8 @@ module.exports = React.createClass({displayName: "exports",
       });
       return (
         React.createElement("div", null, 
-              React.createElement("div", {className: "pokeDiv2"}, React.createElement("p", {className: "pull-right"}, "GARY OAK"), 
-              React.createElement("div", {className: "nameAndPic2"}, 
+              React.createElement("div", {className: "pokeDiv2"}, 
+              React.createElement("div", {className: "nameAndPic2"}, React.createElement("p", {className: "pull-right"}, "GARY OAK"), 
               React.createElement("h2", {id: "compHlth"}, this.state.pokeData.secondPokemon.name), 
               React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
               React.createElement("img", {className: "pokemon-image", src: img2})
@@ -162,9 +161,10 @@ module.exports = React.createClass({displayName: "exports",
                  moves2
               )
               ), 
+
               React.createElement("div", {className: "pokeDiv1"}, 
-              React.createElement("p", null, "Player-One"), 
-              React.createElement("div", {className: "nameAndPic1"}, 
+              
+              React.createElement("div", {className: "nameAndPic1"}, React.createElement("p", {className: "pull-left"}, "Player-One"), 
               React.createElement("h2", {id: "plyrHlth"}, this.state.pokeData.firstPokemon.name), 
               React.createElement("h4", null, "HP:", this.state.pokeData.firstPokemon.hp), 
               React.createElement("img", {className: "pokemon-image", src: img1})
@@ -192,7 +192,6 @@ var Game = require('./components/Game')
 
 // React.render(<App />, document.getElementById('container'));
 React.render(React.createElement(Game, null), document.getElementById('board'));
-
 },{"./components/App":1,"./components/Game":2,"react":160}],5:[function(require,module,exports){
 // shim for using process in browser
 
