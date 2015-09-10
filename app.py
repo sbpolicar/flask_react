@@ -11,10 +11,6 @@ app = Flask(__name__)
 def index():
   return app.send_static_file('index.html')
 
-@app.route('/<path:path>')
-def static_path(path):
-  return app.send_static_file(path)
-
 @app.route('/api/pokedex')
 def pokedex():
   # pokemon api call
@@ -65,6 +61,10 @@ def pokedex():
   }
   # return json.dumps(moves2)
   return json.dumps(pokedex)
+
+@app.route('/<path:path>')
+def static_path(path):
+  return app.send_static_file(path)
 
 # app.run(debug=True)
 if __name__ == "__main__":
