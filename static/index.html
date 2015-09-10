@@ -2,30 +2,39 @@
 <html>
 <head>
 	<title>Pokemon Battle</title>
+	<link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/reset.css">
-	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<div id="page-wrapper">
-		<div id="header-block" class="page-block">
-			<div class="md-padding">
-				<h1>pokeFight.js</h1>
-				<h2>The most intense Pokemon flask, react, fighting app you have ever experienced!</h2>
-			</div>
+<body class="container-fluid">
+<div class="row gameboy text-center"><img src="http://vignette2.wikia.nocookie.net/nintendo/images/6/6a/Game_Boy_Logo.png/revision/latest?cb=20100830220346&path-prefix=en"></div>
+	<div class="col-md-2 gameboy"></div>
+	<div class="col-md-8 gameboy-screen">
+		<div class="">
+			<div id="header-block" class="page-block">
+				<div class="md-padding">
+					<h1>pokeFight.js</h1>
+					<h2>The most intense Pokemon flask, react, fighting app you have ever experienced!</h2>
+				</div>
 
-		</div>
-		<div class="page-block">
-			<div class="md-padding">
-				<p>Click the button to begin the carnage!</p>
-				<button id="fight-button" type="button" value="Fight!" >Fight!</button>
 			</div>
-		</div>
-		<div class="page-block">
-			<div id="board"></div>
+			<div class="page-block">
+				<div class="md-padding">
+					<p>Click the button to begin the carnage!</p>
+					<button id="fight-button" type="button" value="Fight!" >Fight!</button>
+				</div>
+			</div>
+				<div class="hide page-block">
+					<div id="board"></div>
+				</div>
 		</div>
 	</div>
-	
+	<div class="col-md-2 gameboy "></div>
+
+
 </body>
 <script src="/js/main.js"></script>
 </html>

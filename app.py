@@ -39,14 +39,10 @@ def pokedex():
     'hp': 100,
     'atk': pokemon1['sp_atk'],
     'def': pokemon1['sp_def'],
-    'moves':{
-      'move1': moves1first['name'],
-      'move1_power': moves1first['power'],
-      'move2': moves1second['name'],
-      'move2_power': moves1second['power']
-    }
-
-
+    'moves':[
+      {'move1': {'name':moves1first['name'], 'power':moves1first['power']}},
+      {'move2': {'name':moves2first['name'], 'power':moves2first['power']}}
+    ]
 
     },
     'secondPokemon':{
@@ -55,12 +51,11 @@ def pokedex():
     'hp': 100,
     'atk': pokemon2['sp_atk'],
     'def': pokemon2['sp_def'],
-    'moves':{
-      'move1': moves2first['name'],
-      'move1_power': moves2first['power'],
-      'move2': moves2second['name'],
-      'move2_power': moves2second['power']
-    }
+    'moves':[
+      {'move1': {'name':moves1second['name'], 'power':moves1second['power']}},
+      {'move2': {'name':moves2second['name'], 'power':moves2second['power']}}
+    ]
+
 
 
 

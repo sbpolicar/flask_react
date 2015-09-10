@@ -1,17 +1,33 @@
 body{
-	background-color: #FF9900; /*FF0000*/
+	background-color: #BBB1B1;
 	font-family: 'Lato', sans-serif;
 	padding: 20px;
+	font-family: 'Press Start 2P', cursive;
 }
-
-#page-wrapper{
+.hide{
+	display: none;
+}
+.gameboy{
+	background-color: #BBB1B1;
+	height: auto;
+	/*border:solid black 10px;*/
+}
+.gameboy-screen{
+	background-image: url('http://i.imgur.com/L4pQ65U.jpg');
+	background-size: 200% 200%;
+	background-position: center;
+}
+/*#page-wrapper{
+	border:solid 50px;
 	border-radius:10px;
 	background-color: #ffffff;
-	max-width: 800px;
-	width: 100%;
+	max-width: 50%;
+	width: 50%;
 	margin: auto;
 	overflow: auto;
-}
+	height: 50%;
+
+}*/
 
 .page-block{
 	border-radius:10px;
@@ -47,7 +63,7 @@ ul{
 }
 
 p{
-	font-family: 'Lato', sans-serif;
+
 	padding: 10px;
 }
 
