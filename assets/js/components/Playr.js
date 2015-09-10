@@ -52,34 +52,34 @@ module.exports = React.createClass({
       var moves1 = this.state.pokeData.firstPokemon.moves.map(function(move, idx){
           var attack = self.plyrAttack.bind(self, move.power);
           return (
-                <h5 onClick={attack} key={idx}>{move.name}</h5>
+                <button className="btn btn-default attkBtn"><h5 onClick={attack} key={idx}>{move.name}</h5></button>
             )
       });
       var moves2 = this.state.pokeData.secondPokemon.moves.map(function(move, idx){
           var attack = self.plyrAttack.bind(self, move.power);
           return (
-                <h5 key={idx}>{move.name}</h5>
+                <button className="btn btn-default attkBtn"><h5 key={idx}>{move.name}</h5></button>
             )
       });
       return (
         <div>
               <div className="pokeDiv2">
               <div className="nameAndPic2">
-              <h2>{this.state.pokeData.secondPokemon.name}</h2>
+              <h2 id="compHlth">{this.state.pokeData.secondPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.secondPokemon.hp}</h4>
               <img className="pokemon-image" src={img2} />
               </div>
-              <div className="attackDiv">
+              <div className="attackDiv2">
                  {moves2}
               </div>
               </div>
               <div className="pokeDiv1">
               <div className="nameAndPic1">
-              <h2>{this.state.pokeData.firstPokemon.name}</h2>
+              <h2 id="plyrHlth">{this.state.pokeData.firstPokemon.name}</h2>
               <h4>HP:{this.state.pokeData.firstPokemon.hp}</h4>
               <img className="pokemon-image" src={img1} />
               </div>
-              <div className="attackDiv">
+              <div className="attackDiv1">
                   {moves1}
               </div>
               </div>
