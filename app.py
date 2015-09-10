@@ -15,17 +15,23 @@ def index():
 def pokedex():
   # pokemon api call
   pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  print('call 1: {}'.format(pokemon1))
   pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  print('call 2: {}'.format(pokemon2))
   pokemon1 = json.loads(pokemon1.text)
   pokemon2 = json.loads(pokemon2.text)
   # moves api call
   moves1first = requests.get("http://pokeapi.co/"+pokemon1['moves'][1]['resource_uri'])
+  print('call 3: {}'.format(moves1first))
   moves2first = requests.get("http://pokeapi.co/"+pokemon2['moves'][1]['resource_uri'])
+  print('call 4: {}'.format(moves2first))
   moves1first = json.loads(moves1first.text)
   moves2first = json.loads(moves2first.text)
 
   moves1second = requests.get("http://pokeapi.co/"+pokemon1['moves'][2]['resource_uri'])
+  print('call 5: {}'.format(moves1second))
   moves2second = requests.get("http://pokeapi.co/"+pokemon2['moves'][2]['resource_uri'])
+  print('call 6: {}'.format(moves2second))
   moves1second = json.loads(moves1second.text)
   moves2second = json.loads(moves2second.text)
 
