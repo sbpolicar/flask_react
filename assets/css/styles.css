@@ -115,19 +115,26 @@ p{
 }
 .pokeDiv1{
 	float:left;
-	width:60%;
+	width:75%;
 }
 .nameAndPic1{
 	float:left;
 }
 .pokeDiv2{
 	float:right;
-	width:60%;
+	width:75%;
 }
 .nameAndPic2{
 	float:right;
 }
-.attackDiv{
+.attackDiv2{
 	float:right;
 	margin-top: 30px;
+}
+.attackDiv1{
+	float:left;
+	margin-top: 30px;
+}
+.attkBtn{
+	display:block;
 }
