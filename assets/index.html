@@ -8,10 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="/static/js/script.js"></script>
+
 </head>
 <body class="container-fluid">
-<div class="row gameboy text-center"><img src="http://vignette2.wikia.nocookie.net/nintendo/images/6/6a/Game_Boy_Logo.png/revision/latest?cb=20100830220346&path-prefix=en"></div>
-	<div class="col-md-2 gameboy"></div>
+<div class="row gameboy text-center"><img src="http://vignette2.wikia.nocookie.net/nintendo/images/6/6a/Game_Boy_Logo.png/revision/latest?cb=20100830220346&path-prefix=en"><br><br></div>
+	<div class="col-md-2 gameboy"><span class="black-text">Power</span>&nbsp;<span class="text-center gameboy-power">&nbsp;</span><br></div>
 	<div class="col-md-8 gameboy-screen">
 		<div class="">
 			<div id="header-block" class="page-block">
@@ -27,8 +29,8 @@
 					<button id="fight-button" type="button" value="Fight!" >Fight!</button>
 				</div>
 			</div>
-				<div class="hide page-block">
-					<div id="board"></div>
+				<div class="page-block">
+					<div id="board" class="hide"></div>
 				</div>
 		</div>
 	</div>

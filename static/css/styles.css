@@ -1,5 +1,6 @@
 body{
 	background-color: #BBB1B1;
+	color: #55A86E;
 	font-family: 'Lato', sans-serif;
 	padding: 20px;
 	font-family: 'Press Start 2P', cursive;
@@ -12,10 +13,28 @@ body{
 	height: auto;
 	/*border:solid black 10px;*/
 }
+.gameboy-power{
+	width: 10%;
+	border-radius: 50%;
+	background-color: red;
+	box-shadow: 0 0 10px red;
+}
 .gameboy-screen{
 	background-image: url('http://i.imgur.com/L4pQ65U.jpg');
 	background-size: 200% 200%;
 	background-position: center;
+	border-radius: 25px;
+	border: solid #898282 20px;
+}
+#fight-button{
+	background-color: transparent !important;
+	border: none !important;
+}
+.well{
+background-color: #55A86E;
+}
+.black-text{
+	color: black;
 }
 /*#page-wrapper{
 	border:solid 50px;
@@ -41,7 +60,7 @@ body{
 }
 
 #header-block{
-	background-color: #FF0000;
+	/*background-color: #FF0000;*/
 }
 
 .md-padding{
