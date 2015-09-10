@@ -76,5 +76,23 @@ p{
 }
 
 .pokemon-image{
-	width: 100%;
+	width: 15vw;
+}
+.pokeDiv1{
+	float:left;
+	/*width:;*/
+	text-align:center;
+}
+.nameAndPic1{
+	float:left;
+}
+.pokeDiv2{
+	float:right;
+}
+.nameAndPic2{
+	float:right;
+}
+.attackDiv{
+	float:right;
+	margin-top: 30px;
 }
