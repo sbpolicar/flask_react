@@ -13,6 +13,9 @@ body{
 	height: auto;
 	/*border:solid black 10px;*/
 }
+.gameboy-logo{
+	width: 10%;
+}
 .gameboy-power{
 	width: 10%;
 	border-radius: 50%;
