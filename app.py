@@ -2,6 +2,7 @@ import json
 import requests
 import random
 import math
+import os
 from flask import Flask, request, flash, url_for, redirect
 
 app = Flask(__name__)
@@ -17,18 +18,18 @@ def static_path(path):
 @app.route('/api/pokedex')
 def pokedex():
   # pokemon api call
-  pokemon1 = requests.get("https://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
-  pokemon2 = requests.get("https://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  pokemon1 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
   pokemon1 = json.loads(pokemon1.text)
   pokemon2 = json.loads(pokemon2.text)
   # moves api call
-  moves1first = requests.get("https://pokeapi.co/"+pokemon1['moves'][1]['resource_uri'])
-  moves2first = requests.get("https://pokeapi.co/"+pokemon2['moves'][1]['resource_uri'])
+  moves1first = requests.get("http://pokeapi.co/"+pokemon1['moves'][1]['resource_uri'])
+  moves2first = requests.get("http://pokeapi.co/"+pokemon2['moves'][1]['resource_uri'])
   moves1first = json.loads(moves1first.text)
   moves2first = json.loads(moves2first.text)
 
-  moves1second = requests.get("https://pokeapi.co/"+pokemon1['moves'][2]['resource_uri'])
-  moves2second = requests.get("https://pokeapi.co/"+pokemon2['moves'][2]['resource_uri'])
+  moves1second = requests.get("http://pokeapi.co/"+pokemon1['moves'][2]['resource_uri'])
+  moves2second = requests.get("http://pokeapi.co/"+pokemon2['moves'][2]['resource_uri'])
   moves1second = json.loads(moves1second.text)
   moves2second = json.loads(moves2second.text)
 
@@ -65,9 +66,9 @@ def pokedex():
   # return json.dumps(moves2)
   return json.dumps(pokedex)
 
-# app.run(debug=True)
-if __name__ == "__main__":
-  port = int(os.environ.get("PORT", 5000))
-  app.run(host='0.0.0.0', port=port)
+app.run(debug=True)
+# if __name__ == "__main__":
+#   port = int(os.environ.get("PORT", 5000))
+#   app.run(host='0.0.0.0', port=port)
 
 

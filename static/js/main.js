@@ -162,6 +162,7 @@ module.exports = React.createClass({displayName: "exports",
                  moves2
               )
               ), 
+
               React.createElement("div", {className: "pokeDiv1"}, 
               React.createElement("p", null, "Player-One"), 
               React.createElement("div", {className: "nameAndPic1"}, 
