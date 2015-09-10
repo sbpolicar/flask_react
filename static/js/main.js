@@ -44,7 +44,7 @@ var React = require('react');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState:function(){
     return{
-      pokeData:{firstPokemon:{moves:{}},secondPokemon:{moves:{}}}
+      pokeData:{firstPokemon:{moves:[]},secondPokemon:{moves:[]}}
     }
   },
 	pokedex:function(){
@@ -67,7 +67,7 @@ module.exports = React.createClass({displayName: "exports",
   comprAttack:function(){
     console.log('attack!!!')
     var upData = this.state.pokeData;
-    upData.firstPokemon.hp = upData.firstPokemon.hp - 15;
+    upData.firstPokemon.hp = upData.firstPokemon.hp - this.state.pokeData.secondPokemon.moves[Math.floor(Math.random()*1.9)].power;
     this.setState({
       pokeData:upData
     });
@@ -79,7 +79,7 @@ module.exports = React.createClass({displayName: "exports",
     this.setState({
       pokeData:upData
     });
-    window.setTimeout(this.comprAttack(cAttk), 2000);
+    window.setTimeout(this.comprAttack(), 2000);
   },
   componentWillMount:function(){
     this.pokedex();
@@ -90,15 +90,30 @@ module.exports = React.createClass({displayName: "exports",
       var img2="00"+this.state.pokeData.secondPokemon.id;
       img2 = "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/"+img2.slice(img2.length-3)+".png";
       var self = this;
-      var moves1 = this.state.pokeData.firstPokemon.moves.map(function(move){
+      var moves1 = this.state.pokeData.firstPokemon.moves.map(function(move, idx){
           var attack = self.plyrAttack.bind(self, move.power);
           return (
-                React.createElement("h5", {onClick: attack}, "move.name")
+                React.createElement("h5", {onClick: attack, key: idx}, move.name)
             )
       });
-
+      var moves2 = this.state.pokeData.secondPokemon.moves.map(function(move, idx){
+          var attack = self.plyrAttack.bind(self, move.power);
+          return (
+                React.createElement("h5", {key: idx}, move.name)
+            )
+      });
       return (
         React.createElement("div", null, 
+              React.createElement("div", {className: "pokeDiv2"}, 
+              React.createElement("div", {className: "nameAndPic2"}, 
+              React.createElement("h2", null, this.state.pokeData.secondPokemon.name), 
+              React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
+              React.createElement("img", {className: "pokemon-image", src: img2})
+              ), 
+              React.createElement("div", {className: "attackDiv"}, 
+                 moves2
+              )
+              ), 
               React.createElement("div", {className: "pokeDiv1"}, 
               React.createElement("div", {className: "nameAndPic1"}, 
               React.createElement("h2", null, this.state.pokeData.firstPokemon.name), 
@@ -108,17 +123,8 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("div", {className: "attackDiv"}, 
                   moves1
               )
-              ), 
-              React.createElement("div", {className: "pokeDiv2"}, 
-              React.createElement("div", {className: "nameAndPic2"}, 
-              React.createElement("h2", null, this.state.pokeData.secondPokemon.name), 
-              React.createElement("h4", null, "HP:", this.state.pokeData.secondPokemon.hp), 
-              React.createElement("img", {className: "pokemon-image", src: img2})
-              ), 
-              React.createElement("div", {className: "attackDiv"}
-                
               )
-              )
+              
           )
         )
 	}

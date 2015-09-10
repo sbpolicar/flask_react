@@ -6,7 +6,7 @@ body{
 	font-family: 'Press Start 2P', cursive;
 }
 .hide{
-	display: none;
+	/*display: none;*/
 }
 .gameboy{
 	background-color: #BBB1B1;
@@ -115,14 +115,14 @@ p{
 }
 .pokeDiv1{
 	float:left;
-	/*width:;*/
-	text-align:center;
+	width:60%;
 }
 .nameAndPic1{
 	float:left;
 }
 .pokeDiv2{
 	float:right;
+	width:60%;
 }
 .nameAndPic2{
 	float:right;
