@@ -23,6 +23,23 @@ module.exports = React.createClass({
     ajax.open('GET','/api/pokedex');
     ajax.send();
   },
+  comprAttack:function(){
+    console.log('attack!!!')
+    var upData = this.state.pokeData;
+    upData.firstPokemon.hp = upData.firstPokemon.hp - 15;
+    this.setState({
+      pokeData:upData
+    });
+  },
+  plyrAttack:function(pAttk){
+    console.log('attack!!!')
+    var upData = this.state.pokeData;
+    upData.secondPokemon.hp = upData.secondPokemon.hp - pAttk;
+    this.setState({
+      pokeData:upData
+    });
+    window.setTimeout(this.comprAttack(cAttk), 2000);
+  },
   componentWillMount:function(){
     this.pokedex();
   },
@@ -31,6 +48,14 @@ module.exports = React.createClass({
       img1 = "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/"+img1.slice(img1.length-3)+".png";
       var img2="00"+this.state.pokeData.secondPokemon.id;
       img2 = "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/"+img2.slice(img2.length-3)+".png";
+      var self = this;
+      var moves1 = this.state.pokeData.firstPokemon.moves.map(function(move){
+          var attack = self.plyrAttack.bind(self, move.power);
+          return (
+                <h5 onClick={attack}>move.name</h5>
+            )
+      });
+
       return (
         <div>
               <div className="pokeDiv1">
@@ -40,10 +65,7 @@ module.exports = React.createClass({
               <img className="pokemon-image" src={img1} />
               </div>
               <div className="attackDiv">
-              <ul>
-              <li>{this.state.pokeData.firstPokemon.moves.move1}</li>
-              <li>{this.state.pokeData.firstPokemon.moves.move2}</li>
-              </ul>
+                  {moves1}
               </div>
               </div>
               <div className="pokeDiv2">
@@ -53,10 +75,7 @@ module.exports = React.createClass({
               <img className="pokemon-image" src={img2} />
               </div>
               <div className="attackDiv">
-              <ul>
-              <li>{this.state.pokeData.secondPokemon.moves.move1}</li>
-              <li>{this.state.pokeData.secondPokemon.moves.move2}</li>
-              </ul>
+                
               </div>
               </div>
           </div>
