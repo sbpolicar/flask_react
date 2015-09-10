@@ -40,8 +40,8 @@ def pokedex():
     'atk': pokemon1['sp_atk'],
     'def': pokemon1['sp_def'],
     'moves':[
-      {'move1': {'name':moves1first['name'], 'power':moves1first['power']}},
-      {'move2': {'name':moves2first['name'], 'power':moves2first['power']}}
+      {'name':moves1first['name'], 'power':moves1first['power']},
+      {'name':moves2first['name'], 'power':moves2first['power']}
     ]
 
     },

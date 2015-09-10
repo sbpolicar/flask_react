@@ -5,7 +5,7 @@ body{
 	font-family: 'Press Start 2P', cursive;
 }
 .hide{
-	display: none;
+	/*display: none;*/
 }
 .gameboy{
 	background-color: #BBB1B1;
