@@ -121,10 +121,7 @@ module.exports = React.createClass({
                  {moves2}
               </div>
               </div>
-              <audio>
-              <source src="Pokemon.mp3" type="audio/mpeg">
-              Your browser does not support the audio element.
-              </audio>
+
               <div className="pokeDiv1">
               <p>Player-One</p>
               <div className="nameAndPic1">
