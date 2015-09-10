@@ -44,7 +44,12 @@ var React = require('react');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState:function(){
     return{
-      pokeData:{firstPokemon:{moves:[]},secondPokemon:{moves:[]}}
+      pokeData:{firstPokemon:{moves:[]},secondPokemon:{moves:[]}},
+      win:"",
+      show:false,
+      winStyle:{display:'none'},
+      losses:0,
+      wins:0
     }
   },
 	pokedex:function(){
@@ -71,6 +76,23 @@ module.exports = React.createClass({displayName: "exports",
     this.setState({
       pokeData:upData
     });
+    if(this.state.pokeData.firstPokemon.hp<=0){
+      this.setState({
+        win:'lost.',
+        losses: this.state.losses+1,
+        winStyle:{
+          height:'80vh',
+          width:'80vw',
+          position:'fixed',
+          top:'10vh',
+          left:'10vw',
+          textAlign:'center',
+          zIndex:'9',
+          borderRadius:'5px',
+        backgroundColor:'rgba(250,250,250,.9)'
+        }
+      });
+    };
   },
   plyrAttack:function(pAttk){
     console.log('attack!!!')
@@ -79,9 +101,35 @@ module.exports = React.createClass({displayName: "exports",
     this.setState({
       pokeData:upData
     });
-    window.setTimeout(this.comprAttack(), 2000);
+    if(this.state.pokeData.secondPokemon.hp <= 0 ){
+      this.setState({
+        win:'win!',
+        wins: this.state.wins+1,
+        winStyle:{
+          height:'80vh',
+          width:'80vw',
+          position:'fixed',
+          top:'10vh',
+          left:'10vw',
+          zIndex:'9',
+          textAlign:'center',
+          borderRadius:'5px',
+        backgroundColor:'rgba(250,250,250,.9)'
+        }
+      });
+    }else{
+    this.comprAttack();
+    };
   },
   componentWillMount:function(){
+    this.pokedex();
+  },
+  replay:function(){
+    this.setState({
+      winStyle:{
+        display:'none'
+      }
+    });
     this.pokedex();
   },
 	render:function(){
@@ -123,8 +171,13 @@ module.exports = React.createClass({displayName: "exports",
               React.createElement("div", {className: "attackDiv1"}, 
                   moves1
               )
+              ), 
+              React.createElement("div", {style: this.state.winStyle}, 
+                React.createElement("h1", null, "You ", this.state.win), 
+                React.createElement("h3", null, "Wins:", this.state.wins), 
+                React.createElement("h3", null, "Losses:", this.state.losses), 
+                React.createElement("button", {onClick: this.replay, className: "btn btn-success"}, "Battle Again")
               )
-              
           )
         )
 	}

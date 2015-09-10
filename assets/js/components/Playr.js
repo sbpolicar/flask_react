@@ -3,7 +3,12 @@ var React = require('react');
 module.exports = React.createClass({
 	getInitialState:function(){
     return{
-      pokeData:{firstPokemon:{moves:[]},secondPokemon:{moves:[]}}
+      pokeData:{firstPokemon:{moves:[]},secondPokemon:{moves:[]}},
+      win:"",
+      show:false,
+      winStyle:{display:'none'},
+      losses:0,
+      wins:0
     }
   },
 	pokedex:function(){
@@ -30,6 +35,23 @@ module.exports = React.createClass({
     this.setState({
       pokeData:upData
     });
+    if(this.state.pokeData.firstPokemon.hp<=0){
+      this.setState({
+        win:'lost.',
+        losses: this.state.losses+1,
+        winStyle:{
+          height:'80vh',
+          width:'80vw',
+          position:'fixed',
+          top:'10vh',
+          left:'10vw',
+          textAlign:'center',
+          zIndex:'9',
+          borderRadius:'5px',
+        backgroundColor:'rgba(250,250,250,.9)'
+        }
+      });
+    };
   },
   plyrAttack:function(pAttk){
     console.log('attack!!!')
@@ -38,9 +60,35 @@ module.exports = React.createClass({
     this.setState({
       pokeData:upData
     });
-    window.setTimeout(this.comprAttack(), 2000);
+    if(this.state.pokeData.secondPokemon.hp <= 0 ){
+      this.setState({
+        win:'win!',
+        wins: this.state.wins+1,
+        winStyle:{
+          height:'80vh',
+          width:'80vw',
+          position:'fixed',
+          top:'10vh',
+          left:'10vw',
+          zIndex:'9',
+          textAlign:'center',
+          borderRadius:'5px',
+        backgroundColor:'rgba(250,250,250,.9)'
+        }
+      });
+    }else{
+    this.comprAttack();
+    };
   },
   componentWillMount:function(){
+    this.pokedex();
+  },
+  replay:function(){
+    this.setState({
+      winStyle:{
+        display:'none'
+      }
+    });
     this.pokedex();
   },
 	render:function(){
@@ -83,7 +131,12 @@ module.exports = React.createClass({
                   {moves1}
               </div>
               </div>
-              
+              <div style={this.state.winStyle}>
+                <h1>You {this.state.win}</h1>
+                <h3>Wins:{this.state.wins}</h3>
+                <h3>Losses:{this.state.losses}</h3>
+                <button onClick={this.replay} className="btn btn-success">Battle Again</button>
+              </div>
           </div>
         )
 	}
