@@ -10,6 +10,7 @@ module.exports = React.createClass({displayName: "exports",
     )
   }
 });
+
 },{"react":160}],2:[function(require,module,exports){
 var React = require('react');
 var Playr = require('./Playr');
@@ -137,6 +138,7 @@ var Game = require('./components/Game')
 
 // React.render(<App />, document.getElementById('container'));
 React.render(React.createElement(Game, null), document.getElementById('board'));
+
 },{"./components/App":1,"./components/Game":2,"react":160}],5:[function(require,module,exports){
 // shim for using process in browser
 
