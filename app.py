@@ -14,11 +14,13 @@ def index():
 @app.route('/api/pokedex')
 def pokedex():
   # pokemon api call
-  url = "http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150))
-  pokemon1 = requests.get(url)
-  print(url)
+  url1 = "http://pokeapi.co/api/v1/pokemon/"+str(int(math.floor(random.random()*150)))
+  pokemon1 = requests.get(url1)
+  print(url1)
   print('call 1: {}'.format(pokemon1))
-  pokemon2 = requests.get("http://pokeapi.co/api/v1/pokemon/"+str(math.floor(random.random()*150)))
+  url2 = "http://pokeapi.co/api/v1/pokemon/"+str(int(math.floor(random.random()*150)))
+  pokemon2 = requests.get(url2)
+  print(url2)
   print('call 2: {}'.format(pokemon2))
   pokemon1 = json.loads(pokemon1.text)
   pokemon2 = json.loads(pokemon2.text)
